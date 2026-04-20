@@ -1,0 +1,108 @@
+# 🏭 End-to-End Data Engineering Pipeline (Atlon + Sports Bar)
+
+## 📌 Project Overview
+
+This project simulates a real-world **data engineering integration problem** after a merger between two companies:
+
+- **Atlon** → A large sports equipment manufacturer with a mature data warehouse
+- **Sports Bar** → A fast-growing startup selling energy bars and athletic nutrition products with messy, unstructured data
+
+The goal is to **build a unified, scalable data pipeline** using Databricks that integrates both companies’ data into a single analytics-ready system.
+
+---
+
+## 🚨 Problem Statement
+
+After acquisition, Atlon faced major data challenges from Sports Bar:
+
+- Data stored in multiple formats (CSV, APIs, spreadsheets)
+- Missing historical data
+- Inconsistent schemas between systems
+- No proper data warehouse or structured layers
+- Direct Excel-based reporting (no scalable pipeline)
+
+This created:
+- Conflicting KPIs
+- Broken reporting pipelines
+- Inability to generate unified business insights
+
+---
+
+## 🎯 Solution
+
+We designed and implemented a **Medallion Architecture (Bronze → Silver → Gold)** pipeline using Databricks.
+
+### 🥉 Bronze Layer
+- Raw ingestion from AWS S3 (CSV files)
+- Minimal transformations
+- Metadata enrichment (file name, ingestion timestamp)
+- Stored in Delta format
+
+### 🥈 Silver Layer
+- Data cleaning & standardization:
+  - Date parsing
+  - Null handling
+  - Deduplication
+  - Schema alignment across systems
+- Joins with product dimension tables
+- Business-ready structured dataset
+
+### 🥇 Gold Layer
+- Aggregated and BI-ready data
+- Business metrics (sales, quantities, customers, products)
+- Monthly and incremental rollups
+- Used for dashboarding and reporting
+
+---
+
+## 🧱 Data Model
+
+The system follows a **Star Schema design**:
+
+### Fact Table
+- Orders / Sales transactions
+
+### Dimension Tables
+- Customers (B2B clients, channels, markets)
+- Products (category, division, pricing)
+
+Relationships:
+- Fact table connects to dimensions via `customer_id` and `product_id`
+
+---
+
+## ⚙️ Tech Stack
+
+- **Databricks (Community / Serverless Compute)**
+- **Apache Spark (PySpark)**
+- **Delta Lake**
+- **AWS S3 (Data Storage)**
+- **SQL (Analytics layer)**
+- **Python (Data Processing)**
+- **Medallion Architecture (Bronze / Silver / Gold)**
+
+---
+
+## 🔄 Pipeline Flow
+
+1. Ingest raw CSV data from S3 (Landing Zone)
+2. Move processed files to archive folder
+3. Load data into Bronze Delta tables
+4. Clean and transform data in Silver layer
+5. Join with product/customer dimensions
+6. Aggregate into Gold layer for analytics
+7. Build incremental updates for new data loads
+
+---
+
+## 📊 Key Features
+
+- End-to-end ETL pipeline in Databricks
+- Incremental + batch processing support
+- Schema evolution handling (Delta Lake)
+- Data quality handling (nulls, duplicates, inconsistencies)
+- Scalable lakehouse architecture
+
+---
+
+## 📁 Project Structure
