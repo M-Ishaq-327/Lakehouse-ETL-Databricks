@@ -7,7 +7,7 @@ This project simulates a real-world **data engineering integration problem** aft
 - **Atlon** → A large sports equipment manufacturer with a mature data warehouse
 - **Sports Bar** → A fast-growing startup selling energy bars and athletic nutrition products with messy, unstructured data
 
-The goal is to **build a unified, scalable data pipeline** using Databricks that integrates both companies’ data into a single analytics-ready system.
+The goal is to **build a unified, scalable data pipeline** using Databricks that integrates both companies data into a single analytics-ready system.
 
 ---
 
