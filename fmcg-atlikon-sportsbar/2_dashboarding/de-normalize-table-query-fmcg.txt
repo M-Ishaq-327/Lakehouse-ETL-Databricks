@@ -52,5 +52,5 @@ CREATE OR REPLACE VIEW fmcg.gold.vw_fact_orders_enriched AS (
 );
 
 
--- Preview
+-- Previeww
 SELECT * FROM fmcg.gold.vw_fact_orders_enriched;
