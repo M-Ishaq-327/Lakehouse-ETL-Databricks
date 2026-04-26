@@ -2,7 +2,7 @@
 
 ## 📌 Project Overview
 
-This project simulates a real-world **data engineering integration problem** after a merger between two companies:
+This project simulates a real-world **data engineering integration problem** after that merger between two companies:
 
 - **Atlon** → A large sports equipment manufacturer with a mature data warehouse
 - **Sports Bar** → A fast-growing startup selling energy bars and athletic nutrition products with messy, unstructured data
